@@ -1,0 +1,72 @@
+<mvc:View controllerName="com.kpmg.exercise5.controller.MainView" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m">
+	<Shell id="shell">
+		<App id="app">
+			<pages>
+				<Page id="page" title="{i18n>title}">
+					<content>
+						<VBox xmlns="sap.m" id="vboxid">
+							<items>
+								<HBox xmlns="sap.m">
+									<items>
+										<Button xmlns="sap.m" id="cbtn" press="oDataCall" text="Create"></Button>
+										<Button xmlns="sap.m" id="rbtn" press="oDataCall" text="Read"></Button>
+										<Button xmlns="sap.m" id="ubtn" press="oDataCall" text="Update"></Button>
+										<Button xmlns="sap.m" id="dbtn" press="oDataCall" text="Delete"></Button>
+									</items>
+								</HBox>
+								<HBox xmlns="sap.m">
+									<items>
+										<Input xmlns="sap.m" id="uniqueid" placeholder="ID" value="1"></Input>
+										<Input xmlns="sap.m" id="nameid" placeholder="Name" value="test"></Input>
+										<Input xmlns="sap.m" id="emailid" placeholder="Email" value="test@gmail.com"></Input>
+										<Input xmlns="sap.m" id="mobid" placeholder="Mobile" value="8888888888"></Input>
+									</items>
+								</HBox>
+								<HBox xmlns="sap.m">
+									<items>
+										<Table xmlns="sap.m" id="userdatatable" headerText="User Data" items="{ path: 'userModel>/userdataSet' }">
+											<columns>
+												<!-- sap.m.Column -->
+												<Column xmlns="sap.m">
+													<header>
+														<Text xmlns="sap.m" text="Id"></Text>
+													</header>
+												</Column>
+												<Column xmlns="sap.m">
+													<header>
+														<Text xmlns="sap.m" text="Name"></Text>
+													</header>
+												</Column>
+												<Column xmlns="sap.m">
+													<header>
+														<Text xmlns="sap.m" text="Email"></Text>
+													</header>
+												</Column>
+												<Column xmlns="sap.m">
+													<header>
+														<Text xmlns="sap.m" text="Mobile"></Text>
+													</header>
+												</Column>
+											</columns>
+											<items>
+												<ColumnListItem type="Navigation" press=".onPress">
+													<cells>
+														<Text text="{userModel>Id}"/>
+														<Text text="{userModel>Name}"/>
+														<Text text="{userModel>Email}"/>
+														<Text text="{userModel>Mobile}"/>
+													</cells>
+												</ColumnListItem>
+											</items>
+										</Table>
+									</items>
+								</HBox>
+							</items>
+							<!-- sap.ui.core.Control -->
+						</VBox>
+					</content>
+				</Page>
+			</pages>
+		</App>
+	</Shell>
+</mvc:View>
